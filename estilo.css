@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    background-image: url(img/background.webp);
+    background-size: cover;
+    min-height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container {
+    display: grid;
+    grid-template: 
+    "header" 100px
+    "navbar" 120px
+    "main" auto
+    "sidebar" 200px
+    "footer" 300px;
+}
+header {
+    color: white;
+    text-align: center;
+    padding: 4%;
+    font-weight: bold;
+    font-size: 24px;
+    height: 15%;
+    grid-area: header;
+}
+nav {
+    grid-area: navbar;
+}
+.navigation {
+    display: grid;
+    grid-template: 
+    "logo items" auto;
+    background-color: rgba(12, 137, 151, 0.35);
+    color: white;
+}  
+.logo {
+    margin: 1rem auto;
+    padding-left: 1rem;
+    grid-area: logo;
+    }
+  
+.ulnav {
+    margin: 1rem;
+    grid-area: items;
+    text-decoration: none;
+    list-style-type: none;}
+  
+li, a {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        list-style-type: none;
+        text-decoration: none;
+        color: white;
+      }
+  
+.navitem {
+        padding: 0.2rem;
+        cursor: pointer;
+    }
+ 
+.link:hover :active {
+    transform: translate(-0.5rem, -0.2rem);
+    color: mediumseagreen;
+  }
+
+  
+main {
+    grid-area: main;
+}
+main img{
+    width: 100%;
+}
+.ensamble img{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1rem;
+}
+.ensamble {
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+}
+.ensamble p {
+    margin-bottom: 2rem;
+}
+.gif {
+    max-width: 230px;
+    width: 100%;
+    margin: 2rem;
+}
+.img-main img{
+    max-width: 3500px;
+    width: 90%;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: rgba(250, 250, 250, 0.45);
+
+} 
+aside iframe {
+    width: 100%;
+}
+footer {
+    font-size:small;
+    font-weight: 500;
+    grid-area: footer;
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+.foot {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.6rem;
+}
+
+
+
+/*RESOLUCION TABLETAS*/
+@media screen and (min-width:768px){
+    .container {
+        grid-template-columns: auto 30%;
+        grid-template-rows: 150px 120px auto 100px;
+        grid-template-areas: 
+        "header header" 
+        "navbar navbar" 
+        "main sidebar" 
+        "footer footer";
+    }
+   
+    nav {
+        grid-template-rows: 50 px auto;
+        grid-template-areas: 
+        "logo items";
+    }
+    footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+    .ensamble {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50% 50%;
+}
+.gif {
+    margin: 3rem 0.5rem;
+}
+
+/*RESOLUCION MEDIA*/
+
+@media screen and (min-width:1024px){
+    .container {
+        grid-template-columns: 300px auto 300px;
+        grid-template-rows: 150px auto 200px;
+        grid-template-areas: 
+        "header header header" 
+        "navbar main sidebar" 
+        "footer footer footer";
+    }
+    nav {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "logo items";
+    }
+    .navitem {
+        padding: 1rem;
+    }
+    aside iframe {
+        margin-top: 2rem;}
+    .ensamble {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto auto;  }
+}
+.gif {
+    margin: 5rem 0.5rem;
+}
+
+/*RESOLUCION TABLETAS*/
+
+@media screen and (min-width:1200px){
+    body {
+        background-color: darkslategrey;
+    }
+    .container {
+        margin: 0 auto;
+        max-width: 1200px;
+        grid-template: 
+        "header header header" 100px
+        "navbar main sidebar" auto
+        "footer footer footer" 200px /
+        300px auto 300px; 
+    }
+    aside iframe {
+        margin-top: 4rem;
+    }
+}}
